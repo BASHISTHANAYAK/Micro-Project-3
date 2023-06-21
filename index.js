@@ -323,90 +323,160 @@ let Myarray = [
 
 
 
-//1. list all the food items
+//Q1. list all the food items
 
-// let AllFooditems = Myarray.map(function(num){
-//    return num.foodname;
-// })
-// console.log(AllFooditems);
+function allFood_items(){
 
+    let AllFooditems = Myarray.map(function(num){
+      return num.foodname;
+    })
+    console.log(AllFooditems);
 
-// 2. list all the food items with category vegetables
+}
 
-// let  Category_Vegetables=Myarray.filter(function(elem){
-//   return elem.category=="Vegetable";
-// })
-
-// console.log(Category_Vegetables);
+        // allFood_items()
 
 
-//3. list all the food items with category fruit
-// let Category_fruit = Myarray.filter(function(elem){
-//   return elem.category=="Fruit";
-// })
-
-// let Category_fruit_FruitsName=Category_fruit.map(function(ele){
-//  return ele.foodname;
-// })
-
-// console.log(Category_fruit_FruitsName);
 
 
-//4. list all the food items with category protien
 
-// let category_protien = Myarray.filter(function(elem){
-//   return elem.category=="Protein";
-// });
-
-// let category_protien_FruitsName = category_protien.map(function(ele){
-//   return ele.foodname;
-// });
-
-// console.log(category_protien_FruitsName);
+//Q2-7
 
 
-//8.  list all the food items with calorie above 100
+// (i) Gives matched food items objects in a Array.
+
+
+function Enter_Categories(types){
+
+        let  Categories = Myarray.filter(function(elem){
+          return elem.category==types;
+        })
+        
+        console.log(Categories);
+}
+
+  //  Enter_Categories("Nuts")
+
+
+
+
+
+// // (ii) Gives matched foodname in a Array.
+
+function Enter_Categories(types){
+
+        let Categories = Myarray.filter(function(elem){
+          return elem.category==types;
+        })
+
+        let Categories_Name=Categories.map(function(ele){
+             return ele.foodname;
+        })
+
+        console.log(Categories_Name);
+
+}
+
+
+                  // Enter_Categories("Dairy")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Q8 & 9
+
+
+// list all the food items with calorie above 100 or below 100 according to input
+
+function calorie(input){
+  if(input=="above"){
+    let calorie_above_100 =  Myarray.filter(function(ele){
+      return ele.calorie>100;
+    })
+    let calorie_above_100_food = calorie_above_100.map(function(elem){
+      return elem.foodname;
+    });
+    console.log( calorie_above_100_food );
+  }
+      else{ let calorie_above_100 =  Myarray.filter(function(ele){
+              return ele.calorie<100;
+          })
+          let calorie_above_100_food = calorie_above_100.map(function(elem){
+            return elem.foodname;
+          });
+          console.log( calorie_above_100_food );
+          }
+          
+}
      
-// let calorie_above_100 =  Myarray.filter(function(ele){
-//     return ele.calorie>100;
-//   })
 
-//   let calorie_above_100_food = calorie_above_100.map(function(elem){
-//   return elem.foodname;
-// });
-// console.log( calorie_above_100_food );
-
-
-//9. list all the food items with calorie below 100
-
-// let calorie_below_100 =  Myarray.filter(function(ele){
-//     return ele.calorie<100;
-//   })
-
-//   let calorie_below_100_food = calorie_below_100.map(function(elem){
-//   return elem.foodname;
-// });
-// console.log(calorie_below_100_food);
-
-
-//10. list all the food items with highest protien content to lowest
-
-
-// let category_protien = Myarray.filter(function(elem){
-//   return elem.category=="Protein";
-// });
+                // calorie("below")
 
 
 
-// let sorted = category_protien.sort(function(a, b) {
-//     return b.protiens - a.protiens;
-//   });
-//   console.log(sorted);
 
 
-  //11. list all the food items with lowest cab content to highest
 
-//   let cab = Myarray.sort(function(a, b) {
-//     return a.cab - b.cab;
-//   });
-//   console.log(cab);
+
+
+
+
+
+
+
+
+
+
+
+
+//Q10. list all the food items with highest protien content to lowest
+
+
+function protien_content(){
+
+let category_protien = Myarray.filter(function(elem){
+  return elem.category=="Protein";
+});
+
+
+let sorted = category_protien.sort(function(a, b) {
+    return b.protiens - a.protiens;
+  });
+  console.log(sorted);
+
+}
+
+         //protien_content()
+
+
+
+
+
+
+
+  //Q11. list all the food items with lowest cab content to highest
+
+  function cab_content(){
+
+      let cab = Myarray.sort(function(a, b) {
+        return a.cab - b.cab;
+      });
+      console.log(cab);
+
+}
+
+       // cab_content()
