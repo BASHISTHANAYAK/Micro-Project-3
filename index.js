@@ -323,27 +323,29 @@ let Myarray = [
 
 
 
+
+
+
 //Q1. list all the food items
 
-function allFood_items(){
-
-    let AllFooditems = Myarray.map(function(num){
-      return num.foodname;
-    })
-    console.log(AllFooditems);
-
-}
-
-        // allFood_items()
+         function listFoodItems(Myarray) {
+          Myarray.forEach(function(item) {
+              console.log(item);
+            });
+        }
+        
+       // listFoodItems(Myarray);
 
 
 
 
 
-//Q2-7
 
 
-// (i) Gives matched food items objects in a Array.
+
+//Q 2-7
+
+//  Give all matched food items objects in a Array.
 
 
 function Enter_Categories(types){
@@ -355,38 +357,7 @@ function Enter_Categories(types){
         console.log(Categories);
 }
 
-  //  Enter_Categories("Nuts")
-
-
-
-
-
-// // (ii) Gives matched foodname in a Array.
-
-function Enter_Categories(types){
-
-        let Categories = Myarray.filter(function(elem){
-          return elem.category==types;
-        })
-
-        let Categories_Name=Categories.map(function(ele){
-             return ele.foodname;
-        })
-
-        console.log(Categories_Name);
-
-}
-
-
-                  // Enter_Categories("Dairy")
-
-
-
-
-
-
-
-
+   // Enter_Categories("Nuts")
 
 
 
@@ -403,35 +374,29 @@ function Enter_Categories(types){
 // list all the food items with calorie above 100 or below 100 according to input
 
 function calorie(input){
+
   if(input=="above"){
     let calorie_above_100 =  Myarray.filter(function(ele){
       return ele.calorie>100;
     })
-    let calorie_above_100_food = calorie_above_100.map(function(elem){
-      return elem.foodname;
-    });
-    console.log( calorie_above_100_food );
+   
+    console.log(calorie_above_100 );
   }
-      else{ let calorie_above_100 =  Myarray.filter(function(ele){
-              return ele.calorie<100;
-          })
-          let calorie_above_100_food = calorie_above_100.map(function(elem){
-            return elem.foodname;
-          });
-          console.log( calorie_above_100_food );
-          }
+
+          else{ 
+                let calorie_below_100 =  Myarray.filter(function(ele){
+                      return ele.calorie<100;
+                  })
+                
+                  console.log(calorie_below_100);
+            }
           
+              
 }
      
-
-                // calorie("below")
-
-
-
-
-
-
-
+                // calorie("above")
+               // calorie("below")
+                
 
 
 
@@ -448,19 +413,14 @@ function calorie(input){
 
 function protien_content(){
 
-let category_protien = Myarray.filter(function(elem){
-  return elem.category=="Protein";
-});
-
-
-let sorted = category_protien.sort(function(a, b) {
+let sorted =Myarray.sort(function(a, b) {
     return b.protiens - a.protiens;
   });
   console.log(sorted);
 
 }
 
-         //protien_content()
+       // protien_content()
 
 
 
@@ -479,4 +439,4 @@ let sorted = category_protien.sort(function(a, b) {
 
 }
 
-       // cab_content()
+        //cab_content()
