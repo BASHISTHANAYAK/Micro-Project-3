@@ -334,7 +334,7 @@ let Myarray = [
             });
         }
         
-       // listFoodItems(Myarray);
+       listFoodItems(Myarray);
 
 
 
